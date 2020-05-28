@@ -1,0 +1,12 @@
+Eerst en vooral heeft de bot een lokaal credential nodig om in te loggen op de office 365 omgeving.
+Dit gebeurt via de credentialmanager plugin, kan iets doen dat het automatisch checkt in het script als het al gebeurt is. 
+
+!!!!!Maar best manueel vr de veiligheid!!!!!!!
+
+install-module CredentialManager                                                                
+MANUEEL:
+New-StoredCredential -Target "ContosoAdminBot" -Persist 'LocalMachine' -Credential $(Get-Credential) | Out-Null
+
+
+SCRIPT:
+New-StoredCredential -Target "ContosoAdminBot" -Persist 'LocalMachine' -Username AdminBot@ContosoJuanCarlos.onmicrosoft.com -Password ***

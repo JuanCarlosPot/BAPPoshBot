@@ -1,0 +1,9 @@
+$AzureAdCred = $(Get-StoredCredential -Target ContosoAdminBot)
+Connect-AzureAD -Credential $AzureAdCred
+
+$PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
+$PasswordProfile.Password = "KPiba?27"
+
+New-AzureADUser -DisplayName "New User" -PasswordProfile $PasswordProfile -UserPrincipalName "NewUser@ContosoJuanCarlos.onmicrosoft.com" -AccountEnabled $true -MailNickName "Newuser"
+
+Write-Output 'New user added'

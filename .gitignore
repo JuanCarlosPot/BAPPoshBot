@@ -1,0 +1,9 @@
+## Folders
+notes/
+logs/*
+
+## Config Files
+config.psd1
+
+##Scripts
+PoshbotInstall.ps1
